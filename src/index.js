@@ -77,6 +77,16 @@ function Menu() {
 
 //Footer Component
 function Footer() {
+  //Logic Part
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+  console.log(isOpen);
+
+  // if (hour >= openHour && hour <= closeHour) alert("We're currently open!");
+  // else alert("Sorry We're currently close!");
+
   return (
     <footer>{new Date().toLocaleTimeString()} We're currently open!</footer>
   );
@@ -96,9 +106,10 @@ function Pizza() {
   );
 }
 
-//React V18
+//React V18 - connecting to the HTML
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  //In React 18, <React.StrictMode> renders components twice in development mode to detect side effects (like alert()). This happens only in development mode, not in production.
   <React.StrictMode>
     <App />
   </React.StrictMode>
