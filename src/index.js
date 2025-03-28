@@ -50,12 +50,39 @@ const pizzaData = [
 function App() {
   return (
     <div>
-      <h1>Hello, World!!!</h1>
+      <Header />
       {/* Nesting Components (Reusable components) */}
+      <Menu />
+      <Footer />
+    </div>
+  );
+}
+//Header Component
+function Header() {
+  return <h1>Lapinoz Pizza🍕</h1>;
+}
+
+//Menu Component
+function Menu() {
+  return (
+    <div>
+      <h2>Our Menu</h2>
+      <Pizza />
+      <Pizza />
       <Pizza />
       <Pizza />
     </div>
   );
+}
+
+//Footer Component
+function Footer() {
+  return (
+    <footer>{new Date().toLocaleTimeString()} We're currently open!</footer>
+  );
+
+  //It is create component with out using JSX
+  // return React.createElement("footer", null, "We're currently open!");
 }
 
 //Pizza Components
