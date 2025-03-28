@@ -1,0 +1,1 @@
+ <image src="/pizzas/spinaci.jpg/"></image>
