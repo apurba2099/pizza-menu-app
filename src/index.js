@@ -75,11 +75,34 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Pizza
+        name="Pizza Spinaci"
+        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
+        photoName="./pizzas/spinaci.jpg"
+        price={100}
+      />
+      <Pizza
+        name="Pizza Funghi"
+        ingredients="Tomato, mushrooms,"
+        price={120}
+        photoName="./pizzas/funghi.jpg"
+      />
     </main>
+  );
+}
+
+//Pizza Components
+function Pizza(props) {
+  console.log(props);
+  return (
+    <div className="pizza">
+      <img src={props.photoName} alt={props.name}></img>
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredients}</p>
+      </div>
+      <span>{props.price + 3}</span>
+    </div>
   );
 }
 
@@ -103,17 +126,6 @@ function Footer() {
 
   //It is create component with out using JSX
   // return React.createElement("footer", null, "We're currently open!");
-}
-
-//Pizza Components
-function Pizza() {
-  return (
-    <div>
-      <img src="./pizzas/spinaci.jpg" alt="Pizza Spinaci"></img>
-      <h3>Pizza Spinaci</h3>
-      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
-    </div>
-  );
 }
 
 //React V18 - connecting to the HTML
