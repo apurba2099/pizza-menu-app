@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./index.css";
 
 //Data
 const pizzaData = [
@@ -49,7 +50,7 @@ const pizzaData = [
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       {/* Nesting Components (Reusable components) */}
       <Menu />
@@ -59,19 +60,26 @@ function App() {
 }
 //Header Component
 function Header() {
-  return <h1>Lapinoz Pizza🍕</h1>;
+  // const style = { color: "red", fontSize: "48px", textTransform: "uppercase" };
+  const style = {};
+
+  return (
+    <header className="header">
+      <h1 style={style}>Lapinoz Pizza🍕</h1>
+    </header>
+  );
 }
 
 //Menu Component
 function Menu() {
   return (
-    <div>
+    <main className="menu">
       <h2>Our Menu</h2>
       <Pizza />
       <Pizza />
       <Pizza />
       <Pizza />
-    </div>
+    </main>
   );
 }
 
@@ -88,7 +96,9 @@ function Footer() {
   // else alert("Sorry We're currently close!");
 
   return (
-    <footer>{new Date().toLocaleTimeString()} We're currently open!</footer>
+    <footer className="footer">
+      {new Date().toLocaleTimeString()} We're currently open!
+    </footer>
   );
 
   //It is create component with out using JSX
@@ -100,7 +110,7 @@ function Pizza() {
   return (
     <div>
       <img src="./pizzas/spinaci.jpg" alt="Pizza Spinaci"></img>
-      <h2>Pizza Spinaci</h2>
+      <h3>Pizza Spinaci</h3>
       <p>Tomato, mozarella, spinach, and ricotta cheese</p>
     </div>
   );
